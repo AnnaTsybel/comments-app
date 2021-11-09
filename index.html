@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href='./dist/styles.css'>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header__change-theme">
+            <input type="radio" name="themes" value="light" id="light" checked>
+            <label for="dark" class="themes light"></label>
+            <div class="header__button-background">
+
+            </div>
+            <input type="radio" name="themes" value="dark" id="dark">
+            <label for="light" class=" themes dark"></label>
+
+        </div>
+    </header>
+    <main class="main-content">
+        <div class="container">
+            <section class="comments">
+                <h2 class="comments__title">Send your comment</h2>
+                <form action='#' class='comments-form'>
+                    <input type='text' placeholder="Enter your name" required class='comments-form__input'>
+                    <textarea required class='comments-form__textarea'></textarea>
+                    <button type="submit" class='comments-form__button'>Submit</button>
+                </form>
+            </section>
+
+            <section class="comments">
+
+            </section>
+        </div>
+    </main>
+    <script src="dist/bundle.js"></script>
+</body>
+
+</html>

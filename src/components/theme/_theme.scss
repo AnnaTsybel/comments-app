@@ -1,0 +1,15 @@
+:root {
+    --theme-text-color: black;
+    --button-change-theme-bg: rgb(0, 0, 0);
+    --button-bg: rgb(194, 131, 180);
+    --header-bg: grey;
+    --main-content-bg: rgb(180, 180, 180);
+}
+
+.dark {
+    --theme-text-color: rgb(255, 255, 255);
+    --button-change-theme-bg: rgb(226, 226, 226);
+    --button-bg: rgb(124, 69, 112);
+    --header-bg: rgb(34, 34, 34);
+    --main-content-bg: rgb(19, 19, 19);
+}
