@@ -1,0 +1,19 @@
+.pagination {
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: row;
+    li {
+        cursor: pointer;
+        margin: 0.5rem;
+        padding: 1em;
+        border-radius: 0.5rem;
+        background: var(--pagination-element-bg);
+        a {
+            font-size: 1.5rem;
+            color: var(--theme-text-color)
+        }
+        &:hover {
+            background: var(--pagination-element-bg-hover);
+        }
+    }
+}

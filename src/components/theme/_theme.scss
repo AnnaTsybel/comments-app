@@ -1,15 +1,25 @@
 :root {
     --theme-text-color: black;
-    --button-change-theme-bg: rgb(0, 0, 0);
+    --button-change-theme-bg: rgb(56, 56, 56);
     --button-bg: rgb(194, 131, 180);
     --header-bg: grey;
     --main-content-bg: rgb(180, 180, 180);
+    --comment-container-bg: rgb(216, 216, 216);
+    --comment-bg: rgb(255, 255, 255);
+    --notification-bg: rgb(194, 131, 180);
+    --pagination-element-bg: rgb(151, 151, 151);
+    --pagination-element-bg-hover: rgb(133, 133, 133);
 }
 
 .dark {
     --theme-text-color: rgb(255, 255, 255);
-    --button-change-theme-bg: rgb(226, 226, 226);
-    --button-bg: rgb(124, 69, 112);
+    --button-change-theme-bg: rgb(197, 197, 197);
+    --button-bg: #A66BD1;
     --header-bg: rgb(34, 34, 34);
+    --comment-container-bg: rgb(32, 32, 32);
     --main-content-bg: rgb(19, 19, 19);
+    --comment-bg: rgb(15, 15, 15);
+    --notification-bg: #A66BD1;
+    --pagination-element-bg: rgb(0, 0, 0);
+    --pagination-element-bg-hover: rgb(0, 0, 0);
 }

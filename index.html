@@ -10,8 +10,11 @@
 </head>
 
 <body>
-
+    <div class="notification">
+        <p>comment has send</p>
+    </div>
     <header class="header">
+        <a href="/" class="header__logo"><img src="./src/static/images/icons/logo.png" alt=""></a>
         <div class="header__change-theme">
             <input type="radio" name="themes" value="light" id="light" checked>
             <label for="dark" class="themes light"></label>
@@ -25,20 +28,80 @@
     </header>
     <main class="main-content">
         <div class="container">
-            <section class="comments">
-                <h2 class="comments__title">Send your comment</h2>
+            <section class="comments-add">
+                <h2 class="comments-add__title">Send your comment</h2>
                 <form action='#' class='comments-form'>
-                    <input type='text' placeholder="Enter your name" required class='comments-form__input'>
-                    <textarea required class='comments-form__textarea'></textarea>
+                    <input type='text' placeholder="Enter your name" class='comments-form__input' required>
+                    <textarea placeholder="Enter your comment" class='comments-form__textarea' required></textarea>
                     <button type="submit" class='comments-form__button'>Submit</button>
                 </form>
             </section>
 
             <section class="comments">
+                <div class="comments__block">
+                    <div class="comment">
+                        <div class="comment__top-side">
+                            <p class="comment__author">Name</p>
+                            <p class="comment__date">23.04.2021</p>
+                        </div>
+                        <p class="comment__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque felis mauris, auctor eu facilisis sed, sagittis in mi. Sed aliquam, orci non viverra scelerisque, ex turpis mollis nisi, eget aliquet arcu justo eu dui. Vivamus
+                            rutrum mauris vel ante consequat, sed rutrum justo lacinia. Nunc pharetra mattis nisi, eget mollis nibh faucibus et. Donec at dapibus magna, vitae ullamcorper ex. Proin magna ante, lobortis sit amet rhoncus vel, dictum id lectus.</p>
+                    </div>
+                    <div class="comment">
+                        <div class="comment__top-side">
+                            <p class="comment__author">Name</p>
+                            <p class="comment__date">23.04.2021</p>
+                        </div>
+                        <p class="comment__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque felis mauris, auctor eu facilisis sed, sagittis in mi. Sed aliquam, orci non viverra scelerisque, ex turpis mollis nisi, eget aliquet arcu justo eu dui. Vivamus
+                            rutrum mauris vel ante consequat, sed rutrum justo lacinia. Nunc pharetra mattis nisi, eget mollis nibh faucibus et. Donec at dapibus magna, vitae ullamcorper ex. Proin magna ante, lobortis sit amet rhoncus vel, dictum id lectus.</p>
+                    </div>
+                    <div class="comment">
+                        <div class="comment__top-side">
+                            <p class="comment__author">Name</p>
+                            <p class="comment__date">23.04.2021</p>
+                        </div>
+                        <p class="comment__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque felis mauris, auctor eu facilisis sed, sagittis in mi. Sed aliquam, orci non viverra scelerisque, ex turpis mollis nisi, eget aliquet arcu justo eu dui. Vivamus
+                            rutrum mauris vel ante consequat, sed rutrum justo lacinia. Nunc pharetra mattis nisi, eget mollis nibh faucibus et. Donec at dapibus magna, vitae ullamcorper ex. Proin magna ante, lobortis sit amet rhoncus vel, dictum id lectus.</p>
+                    </div>
+
+                    <div class="comment">
+                        <div class="comment__top-side">
+                            <p class="comment__author">Name</p>
+                            <p class="comment__date">23.04.2021</p>
+                        </div>
+                        <p class="comment__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque felis mauris, auctor eu facilisis sed, sagittis in mi. Sed aliquam, orci non viverra scelerisque, ex turpis mollis nisi, eget aliquet arcu justo eu dui. Vivamus
+                            rutrum mauris vel ante consequat, sed rutrum justo lacinia. Nunc pharetra mattis nisi, eget mollis nibh faucibus et. Donec at dapibus magna, vitae ullamcorper ex. Proin magna ante, lobortis sit amet rhoncus vel, dictum id lectus.</p>
+                    </div>
+                </div>
+                <button class='comments__show-more'>Показать еще</button>
+            </section>
+
+            <section class="pagination">
+                <ul class="pagination">
+                    <li class=' prev'>
+                        <a href="#" class='icon-arrow-left2'></a>
+                    </li>
+                    <li>
+                        <a href="#">1</a>
+                    </li>
+                    <li>
+                        <a href="#">2</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">3</a>
+                    </li>
+                    <li class=' next'>
+                        <a href="#" class='icon-arrow-right2'></a>
+                    </li>
+                </ul>
 
             </section>
+
         </div>
+
+
     </main>
+
     <script src="dist/bundle.js"></script>
 </body>
 

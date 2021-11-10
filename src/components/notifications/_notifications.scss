@@ -1,0 +1,20 @@
+.notification {
+    position: fixed;
+    max-width: 40rem;
+    padding: 2rem;
+    bottom: 3rem;
+    left: 1rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+    background: var(--notification-bg);
+    &::after {
+        content: ' ';
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: 6rem;
+        left: 38px;
+        border: 15px solid;
+        border-color: var(--notification-bg)transparent transparent var(--notification-bg);
+    }
+}

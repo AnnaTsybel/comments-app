@@ -1,6 +1,8 @@
-import "./main.scss";
+//api
+import api from './api/comments.js';
 //themes
 import themes from './components/theme/theme.js';
-import connected from "../src/test.js";
+import "./main.scss";
+
+api();
 themes();
-connected();

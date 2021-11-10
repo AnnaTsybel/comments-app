@@ -1,3 +1,13 @@
 .header {
+    height: $header;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 3rem;
     background: var(--header-bg);
+    &__logo {
+        width: 4.8rem;
+        height: 4.8rem;
+    }
 }

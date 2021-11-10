@@ -33,7 +33,7 @@ input[name="themes"] {
 
 input[value="dark"]:checked+label {
     margin-left: 1rem;
-    background: red;
+    background-image: url('../src/static/images/icons/moon.png');
     background-position: center;
     background-size: 80%;
     background-repeat: no-repeat;
@@ -41,7 +41,7 @@ input[value="dark"]:checked+label {
 
 input[value="light"]:checked+label {
     margin-right: 1rem;
-    background: red;
+    background-image: url('../src/static/images/icons/sun.png');
     background-position: center;
     background-size: 80%;
     background-repeat: no-repeat;
