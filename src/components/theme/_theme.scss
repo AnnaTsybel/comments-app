@@ -9,6 +9,7 @@
     --notification-bg: rgb(194, 131, 180);
     --pagination-element-bg: rgb(151, 151, 151);
     --pagination-element-bg-hover: rgb(133, 133, 133);
+    --comment-add-bg: rgb(204, 204, 204);
 }
 
 .dark {
@@ -21,5 +22,7 @@
     --comment-bg: rgb(15, 15, 15);
     --notification-bg: #A66BD1;
     --pagination-element-bg: rgb(0, 0, 0);
+    --pagination-element-bg-active: #A66BD1;
     --pagination-element-bg-hover: rgb(0, 0, 0);
+    --comment-add-bg: rgb(0, 0, 0);
 }

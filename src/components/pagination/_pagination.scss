@@ -1,5 +1,5 @@
 .pagination {
-    margin: 2rem auto;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     li {
@@ -8,12 +8,13 @@
         padding: 1em;
         border-radius: 0.5rem;
         background: var(--pagination-element-bg);
-        a {
-            font-size: 1.5rem;
-            color: var(--theme-text-color)
-        }
+        font-size: 1.5rem;
+        color: var(--theme-text-color);
         &:hover {
             background: var(--pagination-element-bg-hover);
+        }
+        &.active {
+            background: var(--pagination-element-bg-active);
         }
     }
 }

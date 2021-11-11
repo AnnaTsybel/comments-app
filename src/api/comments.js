@@ -1,10 +1,19 @@
-export default function apiComments() {
-    console.log(fetch('https://jordan.ashton.fashion/api/goods/30/comments'));
-    fetch('https://jordan.ashton.fashion/api/goods/30/comments')
-        .then(res => res.json)
-        .then(result => console.log(result))
+export default function apiComments(link) {
+    return fetch(link, {
+            method: "GET",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+        })
+        .then((successResponse) => successResponse.json())
+        .then(result => {
+            return result;
+        })
         .catch(function(error) {
-            console.error('can not get');
+            console.error('could not get');
             console.error(error)
         });
+
+
 }

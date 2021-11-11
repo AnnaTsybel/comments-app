@@ -1,4 +1,5 @@
 .comments {
+    margin: 2rem auto;
     padding: 3rem;
     width: 100%;
     border-radius: 1rem;
@@ -6,27 +7,22 @@
     text-align: center;
     &__block {
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-direction: column;
         justify-content: space-evenly;
     }
     &__show-more {
         @include button-no-style;
-        margin-top: 3rem;
+        margin: 3rem;
         font-size: 1.6rem;
         color: var(--theme-text-color);
     }
 }
 
-.comments-content:nth-child(2n) {
-    margin-right: auto;
-}
-
 .comment {
     margin-top: 2rem;
-    max-width: 60rem;
     padding: 1rem 2rem;
     border-radius: 0.5rem;
+    text-align: left;
     background: var(--comment-bg);
     color: var(--theme-text-color);
     &__author {
