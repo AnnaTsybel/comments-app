@@ -8,8 +8,11 @@
     --comment-bg: rgb(255, 255, 255);
     --notification-bg: rgb(194, 131, 180);
     --pagination-element-bg: rgb(151, 151, 151);
+    --pagination-element-bg-active: rgb(194, 131, 180);
     --pagination-element-bg-hover: rgb(133, 133, 133);
     --comment-add-bg: rgb(204, 204, 204);
+    --show-more-button-bg: rgb(194, 131, 180);
+    --footer-bg: grey;
 }
 
 .dark {
@@ -25,4 +28,6 @@
     --pagination-element-bg-active: #A66BD1;
     --pagination-element-bg-hover: rgb(0, 0, 0);
     --comment-add-bg: rgb(0, 0, 0);
+    --show-more-button-bg: #A66BD1;
+    --footer-bg: rgb(34, 34, 34);
 }

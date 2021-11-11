@@ -1,4 +1,5 @@
 .main-content {
     background: var(--main-content-bg);
     min-height: calc(100vh - $header);
+    padding-bottom: 3rem;
 }

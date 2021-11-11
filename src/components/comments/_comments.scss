@@ -1,5 +1,5 @@
 .comments {
-    margin: 2rem auto;
+    margin: 0 auto;
     padding: 3rem;
     width: 100%;
     border-radius: 1rem;
@@ -12,9 +12,17 @@
     }
     &__show-more {
         @include button-no-style;
-        margin: 3rem;
+        margin: 3rem auto;
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
+        border: 0.2rem solid transparent;
         font-size: 1.6rem;
         color: var(--theme-text-color);
+        background: var(--show-more-button-bg);
+        &:hover {
+            border: 0.2rem solid var(--show-more-button-bg);
+            background: none;
+        }
     }
 }
 
@@ -40,5 +48,6 @@
     &__content {
         margin: 1rem 0;
         font-size: 1.4rem;
+        word-wrap: break-word;
     }
 }

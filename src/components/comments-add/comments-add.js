@@ -1,24 +1,26 @@
-//navigation
-import notifications from '../notifications/notifications.js';
+//import notification of added comment
+import notification from '../notifications/notifications.js';
 
 export default function commentsAdd() {
+    //get form of adding comments
+    const commentsAddForm = document.getElementById('comments-add');
 
-    const b = document.getElementById('comments-add');
-    const inputs = b.querySelectorAll('input');
-    const textarea = b.querySelector('textarea');
-    console.log(textarea)
+    //get elements that should be posted
+    const input = commentsAddForm.querySelector('input');
+    const textarea = commentsAddForm.querySelector('textarea');
+
+    //function to clear inputs value 
     const clearInputs = () => {
-        inputs.forEach(el => {
-            console.log(el)
-            el.value = '';
-        })
-
+        input.value = '';
         textarea.value = '';
     }
-    b.addEventListener('submit', function(el) {
+
+    //add event listener to post data
+    commentsAddForm.addEventListener('submit', function(el) {
+        //prevent default behaviour of submitting for
         el.preventDefault();
-        console.log(b)
-        const formData = new FormData(b);
+
+        const formData = new FormData(commentsAddForm);
         fetch('https://jordan.ashton.fashion/api/goods/30/comments', {
             method: 'POST',
             headers: {
@@ -33,7 +35,7 @@ export default function commentsAdd() {
             console.error(error);
         }).finally(() => {
             clearInputs();
-            notifications();
+            notification();
         })
     })
 }

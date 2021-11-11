@@ -1,7 +1,10 @@
-import fsf from '../../api/comments.js';
-//navigation
+//imports 
+
+//import api function
+import api from '../../api/comments.js';
+//display comments function
 import displayComments from '../comments/display-comments.js';
-//navigation
+//display wrapper of comments function
 import displayCommentsBlock from '../comments/display-comments-block.js';
 
 export default function displayPagination(data) {
@@ -12,23 +15,32 @@ export default function displayPagination(data) {
     //go over recieved data to create all pagination's elements
     data.forEach(el => {
 
-        let paginationElementBlock = document.createElement('li');
-        paginationElementBlock.setAttribute('data-url', el.url)
+        //create element of pagination
+        let paginationElement = document.createElement('li');
+        paginationElement.innerHTML = el.label;
 
-        paginationElementBlock.addEventListener('click', function(el) {
-            const a = el.target.getAttribute('data-url');
-            fsf(a).then(response => {
+        //set data-url to know page numbering 
+        paginationElement.setAttribute('data-url', el.url)
+
+        //set event listener on click to add pages of comments navigation
+        paginationElement.addEventListener('click', function(el) {
+            //get current url of paagination element
+            const urlOfPaginationElem = el.target.getAttribute('data-url');
+
+            //display comments block anew
+            api(urlOfPaginationElem).then(response => {
                 displayCommentsBlock(response, displayPagination(response.links), displayComments(response.data))
             });
+
         })
-        paginationElementBlock.innerText = el.label;
+
+        //if element of pagination has active state add corresponding class
         if (el.active) {
-            paginationElementBlock.classList.add('active')
+            paginationElement.classList.add('active')
         }
-
-        pagination.append(paginationElementBlock)
+        //append element into pagination 
+        pagination.append(paginationElement)
     })
-
 
     return pagination;
 }

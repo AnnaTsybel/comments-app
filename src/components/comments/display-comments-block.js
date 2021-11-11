@@ -1,36 +1,61 @@
-import fsf from '../../api/comments.js';
-//navigation
+//import function  api
+import api from '../../api/comments.js';
+
+//import function of displaying comments
 import displayComments from '../comments/display-comments.js';
-//navigation
+
+//import function of displaying pagination
 import displayPagination from '../pagination/display-pagination.js';
 
-export default function displayCommentsBlock(datas, paginations, commentss) {
+export default function displayCommentsBlock(data, paginationContent, commentsContent) {
+    //get comments block
     let comments = document.querySelector('.comments');
+    //clear content
+    comments.innerHTML = '';
 
-    comments.innerHTML = ''
+    //create comments wrapper 
     let commentsWrapper = document.createElement('div');
     commentsWrapper.classList.add('comments__wrapper');
-    commentsWrapper.append(commentss)
+    //append content into comments wrapper
+    commentsWrapper.append(commentsContent);
 
+    //create pagination wrapper
+    let paginationWrapper = document.createElement('div');
+    paginationWrapper.classList.add('pagination__wrapper');
+    //append content into paginaton wrapper
+    paginationWrapper.append(paginationContent);
 
-    let pagination = document.createElement('div');
-    pagination.classList.add('pagination__wrapper');
-
-    pagination.append(paginations)
-
+    //create button of show more
     let commentsShowMore = document.createElement('button');
     commentsShowMore.classList.add('comments__show-more');
-    commentsShowMore.innerText = 'Показать еще';
+    commentsShowMore.innerText = 'Show more...';
 
+    //add event listener on click the button will be shown more comments
     commentsShowMore.addEventListener('click', function(el) {
-        const a = datas.next_page_url;
-        fsf(a).then(response => {
+        //get url of next page
+        const dataOfNextPage = data.next_page_url;
+
+        api(dataOfNextPage).then(response => {
+            //check if it is no comments to display,hide button of show more
+            if (response.next_page_url === null) {
+                el.target.style.display = 'none'
+            } else {
+                el.target.style.display = 'block'
+            }
+            //clear previous pagination wrapper
+            paginationWrapper.innerHTML = '';
+
+            //append displaying pagination of the next page into wrapper
+            paginationWrapper.append(displayPagination(response.links));
+
+            //append comments of the next page into wrapper
             commentsWrapper.append(displayComments(response.data));
-            pagination.innerHTML = '';
-            pagination.append(displayPagination(response.links));
-            datas = response;
+
+            //reasign previous url of comments page
+            data = response;
         });
 
     });
-    return comments.append(commentsWrapper, commentsShowMore, pagination);
+
+    return comments.append(commentsWrapper, commentsShowMore, paginationWrapper);
 }
