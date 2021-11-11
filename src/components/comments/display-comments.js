@@ -12,6 +12,7 @@ export default function displayComments(data) {
         const month = date.getMonth();
         const year = date.getFullYear();
 
+        //return the converted date
         if (day < 10 && month > 9) {
             return `0${day}.${month}.${year}`;
         } else if (day < 10 && month < 10) {
@@ -24,7 +25,7 @@ export default function displayComments(data) {
     }
     //go over recieved data to display all comments
     data.forEach(el => {
-        // a date of creation
+        // the date of creation
         const dateOfCreation = new Date(el.created_at);
 
         //block with comment

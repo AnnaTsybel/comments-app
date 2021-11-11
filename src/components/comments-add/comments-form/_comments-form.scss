@@ -12,18 +12,20 @@
         outline: none;
         border: 2px solid transparent;
         border-radius: 0.2rem;
+        color: black;
     }
     &__textarea {
-        font-family: 'Work Sans', sans-serif;
-        font-size: 1.4rem;
+        margin: 1rem 0;
         padding: 0.5rem;
         width: 100%;
+        min-height: 10rem;
         outline: none;
         border: none;
         border-radius: 0.2rem;
-        min-height: 10rem;
-        margin: 1rem 0;
         resize: none;
+        color: black;
+        font-family: 'Work Sans', sans-serif;
+        font-size: 1.4rem;
     }
     &__button {
         @include button-no-style;
@@ -38,5 +40,11 @@
         &:hover {
             background: var(--main-content-bg);
         }
+    }
+}
+
+@media screen and (max-width:600px) {
+    .comments-form {
+        padding: 2rem;
     }
 }

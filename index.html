@@ -10,9 +10,13 @@
 </head>
 
 <body>
-    <div class="notification" style='display:none'>
-        <p>comment has send</p>
+    <div class="notification-failed" style='display:none'>
+
     </div>
+    <div class=" notification-success" style='display:none'>
+
+    </div>
+
     <header class="header">
         <a href="/" class="logo "><img class="header__logo" src="./src/static/images/icons/logo.png" alt=""></a>
         <div class="header__change-theme">
@@ -31,8 +35,8 @@
             <section class="comments-add">
                 <h2 class="comments-add__title">Send your comment</h2>
                 <form class='comments-form' id='comments-add'>
-                    <input type='text' placeholder="Enter your name" class='comments-form__input' required>
-                    <textarea placeholder="Enter your comment" class='comments-form__textarea' required></textarea>
+                    <input type='text' placeholder="Enter your name" class='comments-form__input'>
+                    <textarea placeholder="Enter your comment" class='comments-form__textarea'></textarea>
                     <button type="submit" class='comments-form__button'>Submit</button>
                 </form>
             </section>

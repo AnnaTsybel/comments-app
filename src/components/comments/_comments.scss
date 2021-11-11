@@ -12,7 +12,7 @@
     }
     &__show-more {
         @include button-no-style;
-        margin: 3rem auto;
+        margin: 0 auto;
         padding: 1rem 2rem;
         border-radius: 0.5rem;
         border: 0.2rem solid transparent;
@@ -23,6 +23,9 @@
             border: 0.2rem solid var(--show-more-button-bg);
             background: none;
         }
+    }
+    &__wrapper {
+        margin: 0 auto 5rem auto;
     }
 }
 
@@ -49,5 +52,26 @@
         margin: 1rem 0;
         font-size: 1.4rem;
         word-wrap: break-word;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .comments {
+        padding: 1rem;
+        &__show-more {
+            padding: 0.7rem 1.5rem;
+            font-size: 1.4rem;
+        }
+    }
+    .comment {
+        &__author {
+            font-size: 1.4rem;
+        }
+        &__top-side {
+            font-size: 1.2rem;
+        }
+        &__content {
+            font-size: 1.2rem;
+        }
     }
 }

@@ -1,12 +1,23 @@
-export default function apiComments() {
-    //get notification block
-    const notification = document.querySelector('.notification');
+export default function apiComments(data) {
+
+    //create variable for current notification
+    let currentNotification;
+
+    //initialize variable for current notification 
+    if (data.status) {
+        currentNotification = document.querySelector('.notification-success')
+    } else {
+        currentNotification = document.querySelector('.notification-failed')
+    }
+    //add content text to current notification
+    currentNotification.innerText = data.text;
+
     //make it visible
-    notification.style.display = "block";
+    currentNotification.style.display = "block";
 
     //after 2 seconds make it invisible
     setTimeout(function() {
-        notification.style.display = "none";
+        currentNotification.style.display = "none";
     }, 2000);
 
 

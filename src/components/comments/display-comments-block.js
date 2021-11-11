@@ -16,6 +16,7 @@ export default function displayCommentsBlock(data, paginationContent, commentsCo
     //create comments wrapper 
     let commentsWrapper = document.createElement('div');
     commentsWrapper.classList.add('comments__wrapper');
+
     //append content into comments wrapper
     commentsWrapper.append(commentsContent);
 
@@ -25,10 +26,18 @@ export default function displayCommentsBlock(data, paginationContent, commentsCo
     //append content into paginaton wrapper
     paginationWrapper.append(paginationContent);
 
+
     //create button of show more
     let commentsShowMore = document.createElement('button');
     commentsShowMore.classList.add('comments__show-more');
     commentsShowMore.innerText = 'Show more...';
+
+    //check if current page is the last , don't show the button show more
+    if (data.next_page_url === null) {
+        commentsShowMore.style.display = 'none'
+    } else {
+        commentsShowMore.style.display = 'block'
+    }
 
     //add event listener on click the button will be shown more comments
     commentsShowMore.addEventListener('click', function(el) {

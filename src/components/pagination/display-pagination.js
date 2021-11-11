@@ -17,18 +17,31 @@ export default function displayPagination(data) {
 
         //create element of pagination
         let paginationElement = document.createElement('li');
-        paginationElement.innerHTML = el.label;
+
+        //create button for element of pagination
+        let paginationElementButton = document.createElement('button');
+        paginationElementButton.innerHTML = el.label;
 
         //set data-url to know page numbering 
-        paginationElement.setAttribute('data-url', el.url)
+        paginationElementButton.setAttribute('data-url', el.url);
+
+        //check if button has not url, make it disabled
+        if (paginationElementButton.getAttribute('data-url') === 'null') {
+            paginationElementButton.setAttribute('disabled', true);
+        }
+
+        //append button into element
+        paginationElement.append(paginationElementButton);
 
         //set event listener on click to add pages of comments navigation
-        paginationElement.addEventListener('click', function(el) {
+        paginationElementButton.addEventListener('click', function(el) {
+
             //get current url of paagination element
             const urlOfPaginationElem = el.target.getAttribute('data-url');
 
             //display comments block anew
             api(urlOfPaginationElem).then(response => {
+                window.scrollTo(0, 0);
                 displayCommentsBlock(response, displayPagination(response.links), displayComments(response.data))
             });
 
@@ -36,7 +49,7 @@ export default function displayPagination(data) {
 
         //if element of pagination has active state add corresponding class
         if (el.active) {
-            paginationElement.classList.add('active')
+            paginationElementButton.classList.add('active')
         }
         //append element into pagination 
         pagination.append(paginationElement)

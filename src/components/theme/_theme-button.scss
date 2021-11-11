@@ -46,3 +46,16 @@ input[value="light"]:checked+label {
     background-size: 80%;
     background-repeat: no-repeat;
 }
+
+@media screen and (max-width:600px) {
+    .header__change-theme {
+        width: 6rem;
+    }
+    .header__button-background {
+        height: 2.5rem;
+    }
+    .themes {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}

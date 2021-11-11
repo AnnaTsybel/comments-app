@@ -1,7 +1,5 @@
 const path = require('path');
 const MiniCss = require("mini-css-extract-plugin");
-const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
-const { extendDefaultPlugins } = require("svgo");
 
 module.exports = {
     mode: 'development',
@@ -15,32 +13,7 @@ module.exports = {
         new MiniCss({
             filename: 'styles.css',
         }),
-        new ImageMinimizerPlugin({
-            minimizerOptions: {
 
-                plugins: [
-                    ["gifsicle", { interlaced: true }],
-                    ["jpegtran", { progressive: true }],
-                    ["optipng", { optimizationLevel: 5 }],
-                    [
-                        "svgo",
-                        {
-                            plugins: extendDefaultPlugins([{
-                                    name: "removeViewBox",
-                                    active: false,
-                                },
-                                {
-                                    name: "addAttributesToSVGElement",
-                                    params: {
-                                        attributes: [{ xmlns: "http://www.w3.org/2000/svg" }],
-                                    },
-                                },
-                            ]),
-                        },
-                    ],
-                ],
-            },
-        }),
     ],
     module: {
         rules: [{
@@ -62,10 +35,7 @@ module.exports = {
                     'sass-loader',
                 ]
             },
-            {
-                test: /\.(jpe?g|png|gif|svg)$/i,
-                type: "asset",
-            },
+
         ],
     }
 

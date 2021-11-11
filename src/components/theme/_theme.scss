@@ -13,6 +13,7 @@
     --comment-add-bg: rgb(204, 204, 204);
     --show-more-button-bg: rgb(194, 131, 180);
     --footer-bg: grey;
+    --pagination-element-bg-disabled: rgb(138, 138, 138);
 }
 
 .dark {
@@ -30,4 +31,5 @@
     --comment-add-bg: rgb(0, 0, 0);
     --show-more-button-bg: #A66BD1;
     --footer-bg: rgb(34, 34, 34);
+    --pagination-element-bg-disabled: rgb(22, 22, 22);
 }
